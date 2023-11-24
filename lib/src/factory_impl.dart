@@ -39,7 +39,7 @@ class RTCFactoryWeb extends RTCFactory {
               {'DtlsSrtpKeyAgreement': true},
             ],
           };
-    final jsRtcPc = html.RtcPeerConnection({...constr, ...configuration});
+    final jsRtcPc = html.RtcPeerConnection({...configuration, ...constr});
     final _peerConnectionId = base64Encode(jsRtcPc.toString().codeUnits);
     return RTCPeerConnectionWeb(_peerConnectionId, jsRtcPc);
   }
